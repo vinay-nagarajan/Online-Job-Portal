@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+    <script charset="utf-8">
+      var apiKey = '45717642';
+      var sessionId = '1_MX40NTcxNzY0Mn5-MTQ3ODk4NzM5Nzg1NX4vVEVRcmEyd2c5U2wzQjJkUnZYWE9PQ3l-fg';
+      var token = 'T1==cGFydG5lcl9pZD00NTcxNzY0MiZzaWc9ZTczZDU0Y2ZiY2Q3ZTk4YTlkMmI2YzU4Mjk1NDE1ZDkyOGMyZTc4ODpub25jZT00MDA2MTgmY29ubmVjdGlvbl9kYXRhPU5vbmUmY3JlYXRlX3RpbWU9MTQ3OTA1OTY1MiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDc5MTQ2MDUyJnNlc3Npb25faWQ9MV9NWDQwTlRjeE56WTBNbjUtTVRRM09UQTFPVFkxTVRNeE5YNTBSbUoyZHpoUE5rbHdiMlJuY0VWUE5UQk1jVnB5ZUdGLVVINA==';
+      var session = OT.initSession(apiKey, sessionId)
+        .on('streamCreated', function(event) {
+          session.subscribe(event.stream);
+        })
+        .connect(token, function(error) {
+          var publisher = OT.initPublisher();
+          session.publish(publisher);
+        });
+    </script>
+  </body>
+</html>
